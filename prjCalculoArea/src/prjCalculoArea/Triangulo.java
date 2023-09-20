@@ -1,13 +1,15 @@
 package prjCalculoArea;
 
-public class Triangulo extends FormaGeometrica{
-	public Triangulo(int base, int altura) {
-		super(base, altura);
-	}
+import javax.swing.JOptionPane;
 
+public class Triangulo extends FormaGeometrica{
+	public Triangulo(double altura, double base) {
+		super(altura, base);
+	}
 	public void calculoArea() {
-		int area;
-		area = (base*altura)/2;
-		System.out.println("O valor da área do triangulo é: " +area);
+		double area;
+		area = (this.getAltura()*this.getBase())/2;
+		JOptionPane.showMessageDialog(null, "O valor da área do Triangulo é: " +area);
 	}
 }
+

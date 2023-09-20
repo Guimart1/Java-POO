@@ -1,14 +1,14 @@
 package prjCalculoArea;
 
+import javax.swing.JOptionPane;
+
 public class Retangulo extends FormaGeometrica{
-
-	public Retangulo(int base, int altura) {
-		super(base, altura);
+	public Retangulo(double altura, double base) {
+		super(altura, base);
 	}
-
 	public void calculoArea() {
-		int area;
-		area = (base*altura);
-		System.out.println("O valor da área é retangulo: " +area);
+		double area;
+		area = this.getAltura()*this.getBase();
+		JOptionPane.showMessageDialog(null, "O valor da área do retangulo é: " +area);
 	}
 }

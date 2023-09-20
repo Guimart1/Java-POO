@@ -1,13 +1,13 @@
 package prjCalculoArea;
-
+import javax.swing.JOptionPane;
 public class Quadrado extends FormaGeometrica{
-	public Quadrado(int base, int altura) {
-		super(base, altura);
+	public Quadrado(double altura, double base) {
+		super(altura, base);
 	}
-
 	public void calculoArea() {
-		int area;
-		area = (base*altura);
-		System.out.println("O valor da área é quadrado: " +area);
+		double area;
+		area = this.getAltura()*this.getBase();
+		JOptionPane.showMessageDialog(null, "O valor da área do quadrado é: " +area);
 	}
 }
+

@@ -1,24 +1,36 @@
-package prjCalculoArea;
-import java.util.Scanner;
+package prjCalculoArea1;
+import java.util.*;
+import javax.swing.JOptionPane;
+
 public class App {
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
-		System.out.println("Escolha a forma geométrica na qual deseja calcular a área: \n1-Quadrado\n2-Retangulo\n3-Triangulo");
-		int d = ler.nextInt();
-		System.out.println("Insira os valores da base e da altura:");
-		FormaGeometrica c = new FormaGeometrica(ler.nextInt(), ler.nextInt());
-		switch (d) {
-			case 1:
-				Quadrado q = new Quadrado(c.altura, c.base);
+		Object[] opcoes = {"Retangulo", "Quadrado", "Triangulo"};
+        Object selecaoOpcao = JOptionPane.showInputDialog(null, "Escolha a operação:", "Menu", JOptionPane.PLAIN_MESSAGE, null, opcoes, opcoes[0]);
+        String opcao = selecaoOpcao.toString();
+        
+        JOptionPane.showMessageDialog(null,"Você escolheu: "+ opcao);
+        
+        String numStr = JOptionPane.showInputDialog("Digite o valor da altura: ");
+        double altura = Double.parseDouble(numStr);
+		numStr = JOptionPane.showInputDialog("Digite o valor da base: ");
+		double base = Double.parseDouble(numStr);
+		FormaGeometrica c = new FormaGeometrica(altura, base);
+		c.setAltura(altura);
+		c.setBase(base);
+	
+		switch (opcao) {
+			case "Quadrado":
+				Quadrado q = new Quadrado(c.getAltura(), c.getBase());
 				q.calculoArea();
 				break;
-			case 2:
-				Retangulo r = new Retangulo(c.altura, c.base);
+			case "Retangulo":
+				Retangulo r = new Retangulo(c.getAltura(), c.getBase());
 				r.calculoArea();
 				break;
-			case 3:
-				Triangulo t = new Triangulo(c.altura, c.base);
+			case "Triangulo":
+				Triangulo t = new Triangulo(c.getAltura(), c.getBase());
 				t.calculoArea();
 				break;
 			default:
@@ -28,3 +40,4 @@ public class App {
 	}
 
 }
+
