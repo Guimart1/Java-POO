@@ -75,7 +75,7 @@ public class Calculadora {
 			return respostaDouble = "Não é possível fazer o cálculo divindo e(ou) sendo dividido por zero.";
 		}else {
 			result = num1/num2;
-			respostaDouble = "O resultado da soma é: "+decimal.format(result);
+			respostaDouble = "O resultado da divisão é: "+decimal.format(result);
 			return respostaDouble;
 		}
 
@@ -92,7 +92,7 @@ public class Calculadora {
 	//Metodo de multiplicação de numeros decimaims
 	public String Multiplicacao(double num1,double num2) {
 		result = num1*num2;
-		respostaDouble = "O resultado da soma é: "+decimal.format(result);
+		respostaDouble = "O resultado da multiplicação é: "+decimal.format(result);
 		return respostaDouble;
 	}
 }
